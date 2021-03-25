@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&family=Syne+Mono&display=swap');
+
+/* my reset css */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+/* my styling starts here */
+:root {
+    font-size: 15px;
+}
+
+body {
+    background: url(./bg.jpg);
+    background-size: cover; 
+    background-position: bottom right;
+    height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    font-family: 'Syne Mono', monospace;
+    /* font-family: 'New Tegomin', serif; */
+}
+
+main {
+    width: 60%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px black;
+    text-align: center;
+    background: rgba(255,255,255, 0.2);
+}
+
+h1 {
+    color: dodgerblue;
+    padding-bottom: 20px;
+}
+.quote_wrapper {
+    display: flex;
+    height: 120px;
+    justify-content: center;
+    align-items: center;
+}
+
+#quote {
+    padding: 10px;
+    height: fit-content;
+    font-weight: bold;
+}
+
+#author {
+    padding: 10px 0 40px;
+    text-align: right;
+    height: 40px;
+}
+
+button {
+    padding: 8px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 10px black;
+    border: none;
+    background: #EBDC7F;
+    font-family: monospace;
+    font-size: 1rem;
+}
+
+button:hover, button:active {
+    background: #EAB943;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+#time {
+    font-size: 1.3rem;
+    text-shadow: 5px 5px 10px white, -5px -5px 10px white, 5px -5px 10px white, -5px 5px 10px white;
+}
+
+
+/* Responsive version for tab lets < 768px */
+@media screen and (max-width: 850px) {
+    :root {
+        font-size: 12px;
+    }
+    main {
+        width: 90%;
+        padding: 15px 10px;
+    }
+    .quote_wrapper {
+        height: 100px;
+    }
+    #author {
+        padding: 10px 0 30px;
+        height: 30px;
+    }
+}
+
+/* Responsive version for mobiles < 480px */
+@media screen and (max-width: 480px) {
+    .quote_wrapper {
+        height: 180px;
+    }
+}
