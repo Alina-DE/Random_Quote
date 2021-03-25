@@ -5,29 +5,26 @@ let authorElem = document.querySelector("#author");
 
 let url = "https://type.fit/api/quotes";
 
-let quote;
-let author;
-
 fetch(url)
   .then( response => response.json())
   .then( data => {
 
+    // console.log(data);
+
     let randomIndex = Math.floor(Math.random()*data.length)
 
-    quote = data[randomIndex].text
-    author = data[randomIndex].author
-
     if (author != "Donald Trump") {
-        quoteElem.textContent = quote;
-        authorElem.textContent = author;
+        quoteElem.textContent = data[randomIndex].text;
+        authorElem.textContent = data[randomIndex].author;
+
     } else {
-        return
+        quoteElem.textContent = data[randomIndex-1].text;
+        authorElem.textContent = data[randomIndex-1].author;
     }
 });
 
 
-
-
+// Writing the date to the "footer"
 (function () {
     let date = new Date();
 
