@@ -3,7 +3,7 @@
 let quoteElem = document.querySelector("#quote");
 let authorElem = document.querySelector("#author");
 
-let url = "https://type.fit/api/quotes";
+let url = "https://zenquotes.io/api/quotes";
 
 fetch(url)
   .then( response => response.json())
@@ -14,12 +14,12 @@ fetch(url)
     let randomIndex = Math.floor(Math.random()*data.length)
 
     if (data[randomIndex].author != "Donald Trump") {
-        quoteElem.textContent = data[randomIndex].text;
-        authorElem.textContent = data[randomIndex].author;
+        quoteElem.textContent = data[randomIndex].q;
+        authorElem.textContent = data[randomIndex].a;
 
     } else {
-        quoteElem.textContent = data[randomIndex-1].text;
-        authorElem.textContent = data[randomIndex-1].author;
+        quoteElem.textContent = data[randomIndex-1].q;
+        authorElem.textContent = data[randomIndex-1].a;
     }
 });
 
