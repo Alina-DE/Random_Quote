@@ -13,7 +13,7 @@ fetch(url)
 
     let randomIndex = Math.floor(Math.random()*data.length)
 
-    if (data[randomIndex].author != "Donald Trump") {
+    if (data[randomIndex].a != "Donald Trump") {
         quoteElem.textContent = data[randomIndex].q;
         authorElem.textContent = data[randomIndex].a;
 
